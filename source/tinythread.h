@@ -141,6 +141,9 @@ namespace nw=std;
     (defined(__GNUC__) && (defined(__ppc__)))
   #define _TTHREAD_HAS_ASM_ATOMICS_
 #endif
+// MSVC2019 does not support inline assembly in 64 bit mode
+// ========================================================
+#undef _TTHREAD_HAS_ASM_ATOMICS_
 
 // Macro for disabling assignments of objects.
 #ifdef _TTHREAD_CPP11_PARTIAL_
